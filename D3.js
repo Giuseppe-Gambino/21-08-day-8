@@ -114,7 +114,7 @@ const charactersNames = [];
 */
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-  charactersNames[i] = starWarsCharacters[i].name;
+  charactersNames.push(starWarsCharacters[i].name);
 }
 
 console.log(charactersNames);
@@ -127,7 +127,7 @@ const femaleCharacters = [];
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === "female") {
-    femaleCharacters.push(starWarsCharacters[i].name);
+    femaleCharacters.push(starWarsCharacters[i]);
   }
 }
 console.log(femaleCharacters);
@@ -235,7 +235,7 @@ console.log(charactersNames);
 
 for (let i = 0; i < charactersNames.length; i++) {
   for (let j = 0; j < femaleCharacters.length; j++) {
-    if (charactersNames[i] === femaleCharacters[j]) {
+    if (charactersNames[i] === femaleCharacters[j].name) {
       charactersNames.splice(i, 1);
       break;
     }
@@ -246,11 +246,13 @@ console.log(charactersNames);
 
 // con delete li lascio vuoti
 
+// piu statico con ||
+
 // console.log(charactersNames);
 
 // for (let i = 0; i < starWarsCharacters.length; i++) {
 //   if (starWarsCharacters[i].name === femaleCharacters[0] || starWarsCharacters[i].name === femaleCharacters[1]) {
-//     delete charactersNames[i];
+//     delete charactersNames[i]; or charactersNames.splice(i, 1);
 //   }
 // }
 
@@ -260,4 +262,7 @@ console.log(charactersNames);
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
 
-console.log(starWarsCharacters[Math.floor(Math.random() * starWarsCharacters.length)]);
+let vincitore = starWarsCharacters[Math.floor(Math.random() * starWarsCharacters.length)].name;
+
+console.log(`Complimenti ${vincitore} sei il 1000 cliente!!, hai vinto il LICENZIAMENTO!
+fuori dalle scatole!`);
